@@ -1,28 +1,13 @@
 import React from 'react'
 import TodoItem from './TodoItem'
-
+import checklist from '../content/checklist'
 function App(){
+
+    const listComponents = checklist.map(item => <TodoItem key = {item.id} details = {{name:item.name, id:item.id, value:item.value}}/>)
+
     return (
         <div className="container">
-                <TodoItem
-                details = {{name:"react", id:"react", value:"React"}}
-                />
-
-                <TodoItem
-                details = {{name:"es", id:"es", value:"ES6"}}
-                />
-
-                <TodoItem
-                details = {{name:"node", id:"node", value:"Node JS"}}
-                />
-
-                <TodoItem
-                details = {{name:"ts", id:"ts", value:"TypeScript"}}
-                />
-                
-                <TodoItem
-                details = {{name:"mongo", id:"mongo", value:"Mongo DB"}}
-                />
+            {listComponents}
         </div>
     );
 }
